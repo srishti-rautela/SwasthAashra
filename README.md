@@ -1,6 +1,3 @@
-Absolutely. Since **SwasthAashra is now the final standalone project name**, the README should present it as one complete healthcare platform rather than explaining its history or saying it was merged with MediTrust.
-
-Here is a fresh, professional README you can replace your current one with:
 
 # SwasthAashra 🏥
 
