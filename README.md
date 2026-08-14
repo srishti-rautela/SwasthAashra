@@ -1,4 +1,4 @@
-# SwasthAashra 🏥 + MediTrust 💊 (Merged)
+# SwasthAashra 🏥 + MediTrust 💊
 
 This project merges the **MediTrust** counterfeit-medicine detection
 platform into **SwasthAashra**, so hospital staff and patients can verify
