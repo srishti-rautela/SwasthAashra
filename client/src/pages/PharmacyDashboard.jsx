@@ -604,13 +604,16 @@ export default function PharmacyDashboard() {
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-semibold text-slate-900">Pharmacy Dashboard</h2>
           <div className="flex items-center gap-3">
-            <a
-              href="/medicine/verify"
-              className="px-4 py-2 rounded-lg text-white text-sm font-semibold bg-brand-gradient hover:-translate-y-0.5 transition"
-              title="Check a medicine's serial number for authenticity before dispensing"
-            >
-              Verify Medicine Authenticity
-            </a>
+            <div className="flex flex-col items-end gap-1.5">
+              <span className="new-web-badge">Try our new web</span>
+              <a
+                href="/medicine/verify"
+                className="px-4 py-2 rounded-lg text-white text-sm font-semibold bg-brand-gradient hover:-translate-y-0.5 transition"
+                title="Check a medicine's serial number for authenticity before dispensing"
+              >
+                Verify Medicine Authenticity
+              </a>
+            </div>
             <button
               onClick={() => loadData(true)}
               className="px-4 py-2 rounded-lg border border-slate-200 hover:bg-slate-50"

@@ -55,6 +55,25 @@ body, #root {
   box-shadow:0 14px 34px -8px rgba(74,137,243,0.45);
 }
 
+.new-web-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: .2rem .55rem;
+  background: #FEF3C7;
+  color: #92400E;
+  font-size: .65rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.new-web-badge-floating {
+  position: absolute;
+  top: -.65rem;
+  right: -.55rem;
+}
+
 .card-surface {
   background: var(--surface);
   border:1px solid var(--border);
@@ -290,6 +309,20 @@ html {
   box-shadow: 0 10px 30px -8px rgba(94,92,230,0.35); transition: transform .15s, box-shadow .2s;
 }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 16px 36px -10px rgba(74,137,243,0.45); }
+
+.appointment-book-button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.appointment-book-button:hover:not(:disabled),
+.appointment-book-button:focus-visible:not(:disabled) {
+  color: #fff;
+  background: linear-gradient(90deg,var(--brand-start) 0%, var(--brand-end) 100%);
+}
+.appointment-book-button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
 
 .btn-secondary {
   background:

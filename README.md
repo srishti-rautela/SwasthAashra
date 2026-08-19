@@ -1,9 +1,9 @@
 
-# SwasthAashra 🏥
+# Swasth-Aashra 🏥
 
-> **A unified digital healthcare platform for smarter, safer, and more accessible healthcare management.**
+> **A unified digital healthcare platform for Faster, Safer, and more accessible healthcare management.**
 
-SwasthAashra is a full-stack healthcare management platform designed to connect **patients, doctors, pharmacy staff, hospital staff, and medicine manufacturers** through a single digital ecosystem.
+Swasth-Aashra is a full-stack healthcare management platform designed to connect **patients, doctors, pharmacy staff, hospital staff, and medicine manufacturers** through a single digital ecosystem.
 
 The platform combines hospital management, appointment scheduling, digital prescriptions, billing, pharmacy operations, medicine authenticity verification, healthcare analytics, and AI-assisted support into one application.
 
@@ -30,7 +30,7 @@ The platform combines hospital management, appointment scheduling, digital presc
 
 ### 💊 Medicine Verification
 
-SwasthAashra provides a dedicated medicine verification system to help users identify potentially counterfeit medicines.
+Swasth-Aashra provides a dedicated medicine verification system to help users identify potentially counterfeit medicines.
 
 * Medicine batch registration
 * Unique medicine serial generation
@@ -242,7 +242,7 @@ VITE_GROQ_API_KEY=your_groq_api_key
 
 ## 4. Configure MySQL
 
-Create the SwasthAashra database:
+Create the Swasth-Aashra database:
 
 ```sql
 CREATE DATABASE swasthashra;

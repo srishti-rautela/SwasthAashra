@@ -185,7 +185,10 @@ export default function LandingPage() {
                 </Link>
               </motion.div>
               <a href="#features" className="btn-nav-outline">Explore features</a>
-              <Link to="/medicine" className="btn-nav-outline">Verify a Medicine</Link>
+              <Link to="/medicine" className="btn-nav-outline relative">
+                Verify a Medicine
+                <span className="new-web-badge new-web-badge-floating">Try our new web</span>
+              </Link>
             </div>
             {/* Hero Visual */}
             <div className="mt-12 md:mt-16">

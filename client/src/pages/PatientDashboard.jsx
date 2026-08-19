@@ -1,6 +1,6 @@
 // ================== Imports ==================
 
-import { useContext, useEffect, useMemo, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import api from '../utils/api'
@@ -146,9 +146,12 @@ export default function PatientDashboard() {
             <h2 className="text-lg font-semibold">Verify a Medicine</h2>
             <p className="text-sm text-muted">Scan or enter a serial number to check if a medicine is genuine, expired, or counterfeit.</p>
           </div>
-          <span className="btn-cta px-4 py-2 rounded-full text-sm font-semibold shrink-0 group-hover:translate-x-0.5 transition">
-            Open →
-          </span>
+          <div className="flex shrink-0 flex-col items-end gap-2">
+            <span className="new-web-badge">Try our new web</span>
+            <span className="btn-cta px-4 py-2 rounded-full text-sm font-semibold group-hover:translate-x-0.5 transition">
+              Open →
+            </span>
+          </div>
         </Link>
 
         {/* Billing & Payments */}
@@ -204,12 +207,12 @@ export default function PatientDashboard() {
 
         {/* Appointments */}
         <section id="appointments" className="surface-card p-5">
-          <div className="flex items-center justify-between">
+          <div className="appointments-header flex flex-wrap items-center justify-between gap-3">
             <h3 className="font-semibold">Appointments</h3>
 
             <button
               onClick={()=>setOpen(true)}
-              className="btn-primary btn-pill"
+              className="appointment-book-button btn-primary btn-pill"
             >
               Book Appointment
             </button>

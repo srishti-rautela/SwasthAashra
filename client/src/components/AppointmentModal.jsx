@@ -603,7 +603,7 @@ export default function AppointmentModal({ open, onClose, onBooked }) {
         {/* Footer */}
         <div className="modal-actions">
           <button type="button" onClick={onClose} className="btn-secondary btn-pill">Cancel</button>
-          <button className="btn-primary btn-pill hover:shadow-lg" disabled={!isValid} aria-disabled={!isValid}>
+          <button className="appointment-book-button btn-primary btn-pill" disabled={!isValid} aria-disabled={!isValid}>
             Book Appointment
           </button>
         </div>
