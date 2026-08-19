@@ -2,10 +2,10 @@
 
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
 import { toast } from 'react-toastify'
 import AuthContext from '../utils/AuthContext'
 import { motion } from 'framer-motion'
+import api from '../utils/api'
 
 const LOGO_SRC = '/photos/logo_head.png'
 
@@ -65,7 +65,7 @@ export default function AuthPage(props) {
     if (!form.email || !form.password) { toast.error('Enter email and password'); return }
     setLoading(true)
     try {
-      const res = await axios.post('/api/auth/login', { email: form.email, password: form.password })
+      const res = await api.post('/auth/login', { email: form.email, password: form.password })
       const usr = res.data?.user
       const tkn = res.data?.token
       login(tkn, usr)

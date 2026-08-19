@@ -2,10 +2,10 @@
 
 import { useContext, useState } from 'react'
 import { motion } from 'framer-motion'
-import axios from 'axios'
 import { toast } from 'react-toastify'
 import { Link, useNavigate } from 'react-router-dom'
 import AuthContext from '../utils/AuthContext'
+import api from '../utils/api'
 import { HiMail, HiLockClosed, HiUserCircle, HiPhone, HiOfficeBuilding } from 'react-icons/hi'
 
 // ================== Component Definition ==================
@@ -93,13 +93,13 @@ export default function RegisterPatient() {
         specialization: activeTab === 'hospital' ? form.specialization || null : null
       }
       if (activeTab === 'patient') {
-        const res = await axios.post('/api/auth/register', registrationData)
+        const res = await api.post('/auth/register', registrationData)
         const usr = res.data?.user
         const tkn = res.data?.token
         login(tkn, usr)
         navigate('/dashboard/patient', { replace: true })
       } else {
-        await axios.post('/api/auth/register', registrationData)
+        await api.post('/auth/register', registrationData)
         toast.success('Account created successfully! Please sign in.')
         navigate('/auth', { replace: true })
       }
