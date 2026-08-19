@@ -9,7 +9,6 @@ const auth = require('../middleware/auth')
 // Test-mode keys are free forever (https://razorpay.com) - no real money
 // moves until you switch to live keys. See server/.env for where to put
 // RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET.
-const Razorpay = require("razorpay");
 
 let razorpay = null;
 
