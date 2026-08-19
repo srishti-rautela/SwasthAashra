@@ -8,17 +8,35 @@ const databaseUrl = process.env.DATABASE_URL
 // to a cloud database that requires it.
 const useSSL = String(process.env.DB_SSL || '').toLowerCase() === 'true'
 
-const pool = databaseUrl
-  ? mysql.createPool(databaseUrl)
-  : mysql.createPool({
-      host: process.env.DB_HOST || 'localhost',
-      user: process.env.DB_USER || 'root',
-      password: process.env.DB_PASS || '2025',
-      database: process.env.DB_NAME || 'swasthashra',
-      port: process.env.DB_PORT || 3306,
-      waitForConnections: true,
-      connectionLimit: 10,
-      ...(useSSL ? { ssl: { rejectUnauthorized: false } } : {}),
-    })
+let pool
+
+if (databaseUrl) {
+  const url = new URL(databaseUrl)
+
+  pool = mysql.createPool({
+    host: url.hostname,
+    port: Number(url.port) || 4000,
+    user: decodeURIComponent(url.username),
+    password: decodeURIComponent(url.password),
+    database: decodeURIComponent(url.pathname.replace(/^\//, '')),
+    waitForConnections: true,
+    connectionLimit: 10,
+    ssl: {
+      minVersion: 'TLSv1.2',
+      rejectUnauthorized: true,
+    },
+  })
+} else {
+  pool = mysql.createPool({
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASS || '2025',
+    database: process.env.DB_NAME || 'swasthashra',
+    port: process.env.DB_PORT || 3306,
+    waitForConnections: true,
+    connectionLimit: 10,
+    ...(useSSL ? { ssl: { rejectUnauthorized: false } } : {}),
+  })
+}
 
 module.exports = pool
